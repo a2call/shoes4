@@ -36,6 +36,8 @@ before_script:
   - "sleep 3"
 after_script:
   - bundle exec codeclimate-test-reporter
+  - ls -la coverage
+  - cat coverage/.resultset.json | grep shoes-
   - find -name '*.log' -exec cat {} \;
 sudo: false # new build environment
 cache: bundler
